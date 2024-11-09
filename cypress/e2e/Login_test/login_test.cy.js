@@ -5,13 +5,13 @@ describe('POST /login endpoint tests', () => {
         method: 'POST',
         url: '/login',
         body: {
-          email: 'bugi@wp.pl', // wpisz poprawny email z bazy
-          pass: 'testtest' // wpisz poprawne hasło z bazy
+          email: 'bugi@wp.pl', 
+          pass: 'testtest' 
         }
       }).then((response) => {
         expect(response.status).to.eq(200);
         expect(response.body.message).to.eq('true');
-        expect(response.body).to.have.property('name'); // Sprawdź, czy pole "name" jest zwracane
+        expect(response.body).to.have.property('name'); 
       });
     });
   
@@ -20,13 +20,13 @@ describe('POST /login endpoint tests', () => {
         method: 'POST',
         url: '/login',
         body: {
-          email: 'non_existing_user@example.com', // email, który nie istnieje
+          email: 'non_existing_user@example.com', 
           pass: 'any_password'
         }
       }).then((response) => {
         expect(response.status).to.eq(200);
         expect(response.body.message).to.eq('false');
-        expect(response.body).to.not.have.property('name'); // Upewnij się, że nie ma pola "name"
+        expect(response.body).to.not.have.property('name'); 
       });
     });
   
@@ -43,9 +43,9 @@ describe('POST /login endpoint tests', () => {
           email: 'test@example.com',
           pass: 'test_password'
         },
-        failOnStatusCode: false // Pozwala nam przechwycić odpowiedzi z kodem błędu
+        failOnStatusCode: false 
       }).then((response) => {
-        expect(response.status).to.eq(200); // lub `500`, jeśli backend zwróci odpowiednio
+        expect(response.status).to.eq(200); 
         expect(response.body.message).to.eq('false');
       });
     });

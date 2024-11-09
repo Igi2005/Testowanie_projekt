@@ -32,7 +32,7 @@ router.post('/login',async(req,res) => {
         console.error("Error fetching user:", error.message);
         // Możesz dodać odpowiednią reakcję, np. zwrócenie błędu do klienta
         // return res.status(500).json({ message: "Error fetching user", error: error.message });
-        return res.status(200).json({ message: 'false', error: error.message });
+        return res.status(500).json({ message: 'false', error: error.message });
     }
     
 

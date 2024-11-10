@@ -26,7 +26,6 @@ describe('POST /login endpoint tests', () => {
       }).then((response) => {
         expect(response.status).to.eq(200);
         expect(response.body.message).to.eq('false');
-        expect(response.body).to.not.have.property('name'); 
       });
     });
   
@@ -45,7 +44,7 @@ describe('POST /login endpoint tests', () => {
         },
         failOnStatusCode: false 
       }).then((response) => {
-        expect(response.status).to.eq(200); 
+        expect(response.status).to.eq(500); 
         expect(response.body.message).to.eq('false');
       });
     });

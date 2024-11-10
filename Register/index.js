@@ -24,7 +24,7 @@ router.post('/register',async(req,res) =>{
         }
     });
     if(getEmail) {
-        res.status(200).send({ message: 'false' });
+        res.status(409).send({ message: 'false' });
     }
     else {
         try {
@@ -37,13 +37,13 @@ router.post('/register',async(req,res) =>{
                 zip_code: zip,
                 city: city
             };
-        
+            //throw new Error("Database connection error");
             const createdUser = await prisma.users.create({ data: Data });
             console.log("User created successfully:", createdUser);
-            res.status(200).send({ message: 'true' });
+            res.status(201).send({ message: 'true' });
         } catch (error) {
             console.error("Error creating user:", error.message);
-            return res.status(200).json({ message: 'false', error: error.message });
+            return res.status(500).json({ message: 'false', error: error.message });
         }
     }
 

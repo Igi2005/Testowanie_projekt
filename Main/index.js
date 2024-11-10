@@ -23,11 +23,11 @@ router.get('/results', async (req, res) => {
                 score: 'desc'
             }
         });
-    
+        throw new Error("Database connection error");
         res.status(200).json(results);
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: 'Wystąpił błąd podczas pobierania wyników' });
+        res.status(500).json({ error: 'An error occurred while retrieving results' });
     }
     
 });

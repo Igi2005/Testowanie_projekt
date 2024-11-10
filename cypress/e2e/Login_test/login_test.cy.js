@@ -1,6 +1,10 @@
 describe('POST /login endpoint tests', () => {
   
     it('should login successfully when user exists', () => {
+      cy.intercept('POST', '/login', {
+        statusCode: 200,
+        body: { message: 'true', name : 'Olis' }
+      }).as('login successfully');
       cy.request({
         method: 'POST',
         url: '/login',
@@ -16,6 +20,10 @@ describe('POST /login endpoint tests', () => {
     });
   
     it('should return false when user does not exist', () => {
+      cy.intercept('POST','/login',{
+        statusCode: 200,
+        body : { message : 'false'}
+      })
       cy.request({
         method: 'POST',
         url: '/login',

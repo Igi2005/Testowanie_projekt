@@ -68,6 +68,10 @@ export function Clicker() {
       if(msg == "Added") {
         setP('Added score!')
       }
+      if(msg == "User not found!") {
+        setP('You have to login to save score')
+      }
+
     })
   };
 

@@ -1,7 +1,8 @@
 import { Login } from "../Pages/Login"
-import { Main } from "../Pages/Main"
+import { Results } from "../Pages/Results"
 import { Register } from "../Pages/Register"
 import { Clicker } from "../Pages/Clicker"
+import { Main } from "../Pages/Main"
 interface RouteElement {
     element: React.JSX.Element
     icon?: React.JSX.Element
@@ -13,7 +14,12 @@ export const routes: Array<RouteElement> = [
     {
         element: <Main/>,
         path: '/',
-        title: "Main page"
+        title: "Main"
+    },
+    {
+        element: <Results/>,
+        path: '/results',
+        title: "Results"
     },
     {
         element: <Register/>,

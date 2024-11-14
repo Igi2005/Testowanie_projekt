@@ -20,7 +20,12 @@ router.post('/save',async(req,res) => {
                 email: email
             }
         });
-    
+        
+        if (!user) {
+            console.log("User not found.");
+            res.status(400).send({ message: 'User not found!' });
+        }
+
         if (user) {
 
             const existingResult = await prisma.results.findFirst({

@@ -3,6 +3,7 @@ import { Results } from "../Pages/Results"
 import { Register } from "../Pages/Register"
 import { Clicker } from "../Pages/Clicker"
 import { Main } from "../Pages/Main"
+import { Delete } from "../Pages/Delete"
 interface RouteElement {
     element: React.JSX.Element
     icon?: React.JSX.Element
@@ -35,5 +36,10 @@ export const routes: Array<RouteElement> = [
         element: <Clicker/>,
         path: '/clicker',
         title: "Clicker"
+    },
+    {
+        element: <Delete/>,
+        path: '/delete',
+        title: "Delete user"
     }
 ]

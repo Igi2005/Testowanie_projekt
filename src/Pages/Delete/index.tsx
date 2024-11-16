@@ -21,7 +21,19 @@ export function Delete() {
               check_data
             }
           }).then(response=>{
-            console.log('Deleted successfully with reason:', response.data);
+            const msg = response.data.message
+            if(msg === "User not found.") {
+
+            }
+            else if(msg === "Invalid password.") {
+
+            }
+            else if(msg === "User deleted successfully.") {
+
+            }
+            else if(msg === "An error occurred while deleting the user.") {
+              
+            }
           })
         }
         else if(_del !== "I want delete account.") {

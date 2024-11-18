@@ -6,6 +6,7 @@ const register = require("./Register/index.js")
 const login = require("./Login/index")
 const clicker = require("./Clicker/index.js")
 const main = require("./Main/index.js")
+const delete_user = require("./Delete/index.js")
 
 app.use(express.static('public'));
 app.use(express.json())
@@ -16,6 +17,7 @@ app.use('/',register)
 app.use('/',login)
 app.use('/',clicker)
 app.use('/',main)
+app.use('/',delete_user)
 
 
 app.listen(PORT, ()=>{

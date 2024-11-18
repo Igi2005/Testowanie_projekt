@@ -3,6 +3,7 @@ import "./style.scss"
 import { useLocation } from 'react-router-dom';
 import React from 'react';
 import axios from "axios";
+import {Link} from "react-router-dom"
 
 export function Clicker() {
   const [count, setCount] = useState(0); 
@@ -58,7 +59,7 @@ export function Clicker() {
     const Data = {
       email: data1, pass: data2, name : data3, score : count
   }
-  console.log("send " + Data.score)
+  console.log("send " + Data.score + " email to data1" + Data.email)
     axios.post('http://localhost:3000/save',Data)
     .then(res=>{
       const msg = res.data.message
@@ -71,6 +72,9 @@ export function Clicker() {
       if(msg == "User not found!") {
         setP('You have to login to save score')
       }
+      if(msg == "You have to login to save score") {
+        setP("You have to login to save score")
+      }
 
     })
   };
@@ -78,20 +82,30 @@ export function Clicker() {
   return (
     <div id="clicker">
       <h1>Clicker</h1>
-      <h1>Hello {data3} !</h1>
-      <p>Clicks: {count}</p>
-      <p>Time left: {timeLeft}s</p>
-      <button onClick={handleClick} disabled={!isRunning && started}>
-        Click me!
-      </button>
-      {!isRunning && started && (
+      {data1 && data2 ? (
         <>
-          <p>Time's up!</p>
-          <button onClick={saveScore}>Save Score</button>
-          <button onClick={startNewGame}>New Game</button>
+          <h1>Hello {data3} !</h1>
+          <p>Clicks: {count}</p>
+          <p>Time left: {timeLeft}s</p>
+          <button onClick={handleClick} disabled={!isRunning && started}>
+            Click me!
+          </button>
+          {!isRunning && started && (
+            <>
+              <p>Time's up!</p>
+              <button onClick={saveScore}>Save Score</button>
+              <button onClick={startNewGame}>New Game</button>
+            </>
+          )}
+          {p}
+        </>
+      ) : (
+        <>
+          <p>You need to log in to play the game.</p>
+          <Link to={'/login'}>Login</Link>
         </>
       )}
-      {p}
     </div>
   );
+  
 }

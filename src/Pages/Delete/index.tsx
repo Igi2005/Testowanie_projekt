@@ -3,7 +3,9 @@ import { useState } from "react"
 import "./style.scss"
 export function Delete() {
     const [err_test,setErrTest] = useState('')
-
+    const [err_test2,setErrTest2] = useState('')
+    const [err_test3,setErrTest3] = useState('')
+    const [res,setRes] = useState('')
     function Data(e : React.ChangeEvent<any>) {
         e.preventDefault()
         const {email,pass,del} = e.target.elements
@@ -23,13 +25,13 @@ export function Delete() {
           }).then(response=>{
             const msg = response.data.message
             if(msg === "User not found.") {
-
+              setErrTest2("User not found.")
             }
             else if(msg === "Invalid password.") {
-
+              setErrTest3("Invalid password.")
             }
             else if(msg === "User deleted successfully.") {
-
+              setRes("User deleted successfully.")
             }
             else if(msg === "An error occurred while deleting the user.") {
               
@@ -53,10 +55,12 @@ export function Delete() {
           <div className="col">
               <label htmlFor="email">Email:</label>
               <input type="text" className="form-control" id="email" name="email"/>
+              <p>{err_test2}</p>
           </div>
           <div className="col">
               <label htmlFor="pass">Password:</label>
               <input type="password" className="form-control" id="pass" name="pass"/>
+              <p>{err_test3}</p>
           </div>
       </div>
       <div className="row">
@@ -68,6 +72,7 @@ export function Delete() {
       </div>
       <button type="submit" className="btn btn-primary">Login</button>
     </form>
+      <p>{res}</p>
     </div>
     )
 }

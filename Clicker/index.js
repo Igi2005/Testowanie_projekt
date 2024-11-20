@@ -66,9 +66,7 @@ router.post('/save',async(req,res) => {
                 console.log("Nowy wynik został dodany:", newResult);
                 res.status(200).send({ message: 'Added' });
             }
-        } else {
-            console.log("User exists!");
-        }
+        } 
     } catch (error) {
         console.error("Error", error);
     }

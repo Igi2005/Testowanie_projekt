@@ -17,10 +17,10 @@ router.delete('/delete', async(req,res) => {
           });
       
           if (!user) {
-            return res.status(404).json({ message: 'User not found.' });
+            return res.status(200).json({ message: 'User not found.' });
           }
           if (user.password !== pass) {
-            return res.status(401).json({ message: 'Invalid password.' });
+            return res.status(200).json({ message: 'Invalid password.' });
           }
           await prisma.results.deleteMany({
             where: { player_id: user.id },
@@ -28,10 +28,10 @@ router.delete('/delete', async(req,res) => {
           await prisma.users.delete({
             where: { email },
           });
-
+          //throw new Error("Database connection error");  
           res.status(200).json({ message: 'User deleted successfully.' });
           
-    } catch(e) {
+    } catch(error) {
         console.error('Error deleting user:', error);
         res.status(500).json({ message: 'An error occurred while deleting the user.' });
     }

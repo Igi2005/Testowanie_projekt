@@ -1,5 +1,34 @@
-#main_photo {
-  width: 70%;
-  height: 60vh;
-  margin-top: 10vh;
+.main-card {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  margin-top: 20vh;
+  
+}
+
+.main-card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.main-card-body {
+  padding: 15px;
+}
+
+.main-card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.main-card-text {
+  font-size: 14px;
+}
+
+.main-card-footer {
+  background-color: #f8f9fa;
+  padding: 10px;
+  text-align: right;
 }

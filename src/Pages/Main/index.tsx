@@ -1,15 +1,65 @@
 import "./style.scss"
 export function Main() {
     return (
-        <div>
-            <div className="card mb-3">
-                <img className="card-img-top" id="main_photo" src="https://www.creativefabrica.com/wp-content/uploads/2022/09/06/simple-flower-Graphics-37865245-1.jpg" alt="Card image cap"/>
-                <div className="card-body">
-                    <h5 className="card-title">What is Lorem Ipsum?</h5>
-                    <p className="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
-                    <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-                </div>
-        </div>
+
+                <div className="main-card">
+      <img 
+        src="https://via.placeholder.com/300" 
+        className="main-card-img-top" 
+        alt="Placeholder" 
+      />
+      <div className="main-card-body">
+        <h5 className="main-card-title">Card Title</h5>
+        <p className="main-card-text">
+        Teraz to ja rozdaję karty (yah), baby bambi in real life (yah)
+Słodziakowy las (ha), chcesz pokażę ci mój świat (jej)
+Warkoczyki i dołeczki (jej), baby bambi in real life (jej)
+Nie jestem taka shy (yah), chcesz pokażę ci mój świat (yah)
+Teraz to ja rozdaję karty, baby bambi in real life (yah)
+Słodziakowy las (ha), chcesz pokażę ci mój świat (jej)
+Warkoczyki i dołeczki (jej), baby bambi in real life (jej)
+Nie jestem taka shy (yah), chcesz pokażę ci mój świat (yah)
+Dziś przetyram każdą dobę, bo to sukces zrobi shout (yah, yah)
+Mordzia spinasz, może podbij, razem odpalimy stuff (woah)
+Zawsze byłam jaka jestem, a to ty kreujesz hype (ty)
+Daj mi jeszcze tylko chwilę, Bambi będzie worldwide
+Nie lubię spin (spin), nie bądź mean (mean)
+Sztywno ci? To podpalę gibona
+Słodko mi kiedy mówisz "młoda zobacz, parę dni i się pojawisz na bilbordach"
+Hola, hola ziom, potańczymy i nic więcej (yah, yah)
+Teraz chcę się bawić, a nie kłócić z tobą bejbe (yah, yah)
+Nowy drop (drop), ja nie zwalniam na zakręcie (skrrt)
+Ciągle idę w górę, spotkamy się jak dobiegniesz
+Teraz to ja rozdaję karty (yah), baby bambi in real life (yah)
+Słodziakowy las (ha), chcesz pokażę ci mój świat (jej)
+Warkoczyki i dołeczki (jej), baby bambi in real life (jej)
+Nie jestem taka shy (yah), chcesz pokażę ci mój świat (yah)
+Teraz to ja rozdaję karty , baby bambi in real life (yah)
+Słodziakowy las (ha), chcesz pokażę ci mój świat (jej)
+Warkoczyki i dołeczki (jej), baby bambi in real life (jej)
+Nie jestem taka shy (yah), chcesz pokażę ci mój świat (yah)
+B do A, do M, do B, do, shit, właśnie zjadłam I
+Robi pierdolony hit, twoja mała candy
+Wzrosło moje PKB, szybko jak LTE
+Spowalnia mnie THC, a przyspiesza AMG
+Kursuje jak PKP, nowa gwiazda PLN (yah)
+Je m'appelle Bambi, babe, flow jak PNL (jo)
+Z PZN do WWA, najmłodsza trapstar (yah)
+Podpisałam kontrakt, to się dzieje in real life (elo)
+Teraz to ja rozdaję karty (yah), baby bambi in real life (yah)
+Słodziakowy las (ha), chcesz pokażę ci mój świat (jej)
+Warkoczyki i dołeczki (jej), baby bambi in real life (jej)
+Nie jestem taka shy (yah), chcesz pokażę ci mój świat (yah)
+Teraz to ja rozdaję karty, baby bambi in real life (yah)
+Słodziakowy las (ha), chcesz pokażę ci mój świat (jej)
+Warkoczyki i dołeczki (jej), baby bambi in real life (jej)
+Nie jestem taka shy (yah), chcesz pokażę ci mój świat
+        </p>
+      </div>
+      <div className="main-card-footer">
+        <small className="text-muted">Last updated 5 minutes ago</small>
+      </div>
+    </div>
+        
     )
 }

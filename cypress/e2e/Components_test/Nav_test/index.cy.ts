@@ -1,19 +1,19 @@
 /// <reference types="cypress" />
 
-describe('Komponent Nav', () => {
+describe('Component Nav', () => {
     beforeEach(() => {
       cy.visit('/');
     });
   
-    it('Powinien wyświetlać pasek nawigacyjny', () => {
+    it('It should display a navigation bar', () => {
       cy.get('.navbar').should('be.visible');
     });
   
-    it('Powinien zawierać tytuł "Projekt do testowania"', () => {
+    it('Should contain the title "Projekt do testowania"', () => {
       cy.get('.navbar-brand').should('contain.text', 'Projekt do testowania');
     });
   
-    it('Powinien otworzyć i zamknąć menu offcanvas', () => {
+    it('It should open and close the offcanvas menu', () => {
       cy.get('.navbar-toggler').click();
       cy.get('.offcanvas').should('be.visible');
       cy.get('.btn-close').click();

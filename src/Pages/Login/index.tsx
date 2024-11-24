@@ -33,12 +33,12 @@ export function Login() {
     if (!_pass) {
       setIspass('Password is required');
       isValid = false;
-    } else if (_pass.length < 6) {
+    } /*else if (_pass.length < 6) {
       setIspass('Password must be at least 6 characters');
       isValid = false;
     } else {
       setIspass('');
-    }
+    }*/
 
     if (isValid) {
       console.log('Form data is valid and ready for submission');
@@ -99,11 +99,15 @@ export function Login() {
         </div>
         <button type="submit" className="btn btn-primary">Login</button>
       </form>
-      {Ismsg && (
-        <>
+      {Ismsg === 'You have successfully logged !' && (
+          <>
+            <p>{Ismsg}</p>
+            <button onClick={newPage}>Click me!</button>
+          </>
+        )}
+        {Ismsg === 'The data does not match !' && (
           <p>{Ismsg}</p>
-          <button onClick={newPage}>Click me!</button>
-        </>)}
+        )}
       </div>
       
     )

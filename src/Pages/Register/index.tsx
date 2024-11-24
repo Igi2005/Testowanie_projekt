@@ -186,7 +186,20 @@ export function Register() {
         </div>
         <button type="submit" className="btn btn-primary">Register</button>
       </form>
-      <p>{Ismsg}</p>
+      
+  {Ismsg === 'You have successfully registered !' && (
+    <>
+        <p>{Ismsg}</p>
+          <button onClick={() => window.location.href = '/login'}>
+            Go to Login!
+          </button>
+          </>
+        )}
+      
+      <p>
+        {Ismsg === 'Email exists in the database !' && Ismsg}
+      </p>
+
       </div>
     )
 }

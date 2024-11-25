@@ -7,6 +7,7 @@ const login = require("./Login/index")
 const clicker = require("./Clicker/index.js")
 const main = require("./Main/index.js")
 const delete_user = require("./Delete/index.js")
+const chat = require("./Chat/index.js")
 
 app.use(express.static('public'));
 app.use(express.json())
@@ -18,6 +19,7 @@ app.use('/',login)
 app.use('/',clicker)
 app.use('/',main)
 app.use('/',delete_user)
+app.use('/',chat)
 
 
 app.listen(PORT, ()=>{

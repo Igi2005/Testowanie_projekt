@@ -79,6 +79,11 @@ export function Login() {
 
   }
 
+  function newPage1() {
+    navigate('/chat', { state: { data1, data2, data3 } });
+
+  }
+
     return (
       <div id="login">
           <form onSubmit={Validate}>
@@ -102,7 +107,9 @@ export function Login() {
       {Ismsg === 'You have successfully logged !' && (
           <>
             <p>{Ismsg}</p>
-            <button onClick={newPage}>Click me!</button>
+            <button onClick={newPage}>Clicker!</button>
+            <button onClick={newPage1}>Chat!</button>
+
           </>
         )}
         {Ismsg === 'The data does not match !' && (

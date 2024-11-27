@@ -12,17 +12,14 @@ router.post('/save',async(req,res) => {
     const {email,pass,name,score} = req.body;
     console.log("count to " + score + "email to " + email)
 
-
-
     try {
 
         if(email == undefined && pass == undefined) {
             return res.status(200).send({message : "You have to login to save score"})
         }
 
-        const user = await prisma.users.findFirst({
+        const user = await prisma.users.findUnique({
             where: {
-                first_name: name,
                 password: pass,
                 email: email
             }

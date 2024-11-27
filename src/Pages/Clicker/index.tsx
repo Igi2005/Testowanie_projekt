@@ -63,16 +63,17 @@ export function Clicker() {
     axios.post('http://localhost:3000/save',Data)
     .then(res=>{
       const msg = res.data.message
-      if(msg == "Update") {
+      console.log("msg to " +  msg)
+      if(msg === "Update!") {
         setP("Update score!")
       }
-      if(msg == "Added") {
+      if(msg === "Added") {
         setP('Added score!')
       }
-      if(msg == "User not found!") {
+      if(msg === "User not found!") {
         setP('You have to login to save score')
       }
-      if(msg == "You have to login to save score") {
+      if(msg === "You have to login to save score") {
         setP("You have to login to save score")
       }
 
@@ -97,7 +98,7 @@ export function Clicker() {
               <button onClick={startNewGame}>New Game</button>
             </>
           )}
-          {p}
+          <p>{p}</p>
         </>
       ) : (
         <>

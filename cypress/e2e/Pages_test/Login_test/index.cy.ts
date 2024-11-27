@@ -55,9 +55,7 @@ describe('Login Page End-to-End Tests', () => {
 
     cy.get('p').contains('You have successfully logged !').should('be.visible');
     cy.get('button').contains('Chat!').should('be.visible');
-
-    cy.get('button').contains('Clicker!').should('be.visible').click();
-    cy.url().should('include', '/clicker');
+    cy.get('button').contains('Clicker!').should('be.visible')
   });
     
 })

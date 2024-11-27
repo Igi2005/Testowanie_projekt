@@ -70,7 +70,7 @@ export function Delete() {
         <p>{err_test}</p>
         </div>
       </div>
-      <button type="submit" className="btn btn-primary">Login</button>
+      <button type="submit" className="btn btn-primary">Confirm</button>
     </form>
       <p>{res}</p>
     </div>

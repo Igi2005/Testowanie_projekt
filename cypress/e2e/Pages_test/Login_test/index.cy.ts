@@ -41,7 +41,7 @@ describe('Login Page End-to-End Tests', () => {
 
     cy.get('p').contains('The data does not match !').should('be.visible');
   });
-  it('should display error for incorrect login details', () => {
+  it('should display msg for correct login details', () => {
     cy.intercept('POST', '/login', {
       statusCode: 200,
       body: { message: 'true' , name : 'Xiega'}, 
@@ -54,8 +54,9 @@ describe('Login Page End-to-End Tests', () => {
     cy.wait('@loginRequest');
 
     cy.get('p').contains('You have successfully logged !').should('be.visible');
-    cy.get('button').contains('Click me!').should('be.visible').click();
+    cy.get('button').contains('Chat!').should('be.visible');
 
+    cy.get('button').contains('Clicker!').should('be.visible').click();
     cy.url().should('include', '/clicker');
   });
     

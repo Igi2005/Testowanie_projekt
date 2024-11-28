@@ -1,46 +1,47 @@
-# Getting Started with Create React App
+## Dokumentacja Frontendowa
+To jest frontendowa część aplikacji, która komunikuje się z backendem, obsługując interfejs użytkownika dla funkcji takich jak logowanie, rejestracja, czat, wyświetlanie wyników oraz zapisywanie wyników graczy.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Technologie
+* React: Biblioteka do tworzenia interfejsu użytkownika
+* Axios: Biblioteka do wykonywania zapytań HTTP
+* CSS/SCSS: Do stylizacji aplikacji
+* React Router: Do nawigacji po aplikacji
 
-## Available Scripts
+# Wymagania
+* Node.js
+* NPM (Node Package Manager)
+* Przeglądarka internetowa (np. Google Chrome)
 
-In the project directory, you can run:
+## Setup
+Jak włączyć frontend:
 
-### `npm start`
+```
+$ git clone -b Front https://github.com/Igi2005/Testowanie_projekt.git
+$ cd Front
+$ npm i
+$ npx prisma init
+$ npx prisma db pull
+$ npm install cypress
+$ npm start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Funkcjonalności
+1. Logowanie użytkownika
+* Komponent Login.js umożliwia użytkownikom logowanie się do systemu. Wprowadzenie poprawnych danych (email, password) skutkuje przekierowaniem użytkownika do strony głównej aplikacji lub wyświetleniem komunikatu o błędzie.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. Rejestracja nowego użytkownika
+* Komponent Register.js pozwala użytkownikom na utworzenie nowego konta w aplikacji. Po poprawnym zapisaniu danych, użytkownik otrzymuje komunikat o pomyślnym utworzeniu konta.
 
-### `npm test`
+3. Czat
+* Komponent Chat.js pozwala użytkownikom na wysyłanie wiadomości. Każda wiadomość jest zapisywana w bazie danych i wyświetlana na stronie czatu.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Wyniki graczy
+* Komponent Results.js pozwala na wyświetlanie wyników graczy. Wyniki są pobierane z backendu i wyświetlane w postaci listy.
 
-### `npm run build`
+5. Zapis wyników gracza
+* Komponent SaveScore.js pozwala użytkownikom na zapisanie swojego wyniku, który jest następnie przechowywany w bazie danych.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Autorzy
+* Igor Rewers
+* Aleksander Poniatowski
+* Hugo Plewa

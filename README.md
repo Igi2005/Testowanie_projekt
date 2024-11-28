@@ -45,6 +45,6 @@ Opis:
 * [Usuwa konto użytkownika oraz wszystkie powiązane z nim dane (np. wyniki). Wymaga podania danych logowania (email i password).]
 
 ## Autorzy
-Igor Rewers
-Hugo Plewa
-Aleksander Poniatowski
+* [Igor Rewers]
+* [Hugo Plewa]
+* [Aleksander Poniatowski]

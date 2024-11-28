@@ -40,7 +40,7 @@ Opis:
 Opis:
 * Zapisuje lub aktualizuje wynik gracza w systemie. Wymaga danych o email, password, oraz wyniku (score).
 
-##E ndpoint POST/ delete
+## Endpoint POST/ delete
 Opis:
 * Usuwa konto użytkownika oraz wszystkie powiązane z nim dane (np. wyniki). Wymaga podania danych logowania (email i password).
 

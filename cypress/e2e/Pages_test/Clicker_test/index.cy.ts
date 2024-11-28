@@ -11,7 +11,7 @@ describe('Clicker Test', () => {
         cy.get('p').contains('You need to log in to play the game.').should('be.visible');
     });
 
-    /*it('should increment the counter on click', () => {
+    it('should increment the counter on click', () => {
         cy.intercept('POST', '/login', {
             statusCode: 200,
             body: { message: 'true' , name : 'Xiega'}, 
@@ -33,7 +33,7 @@ describe('Clicker Test', () => {
 
         // Assuming the counter has an id of 'counter'
         cy.get('p').contains('Clicks').should('have.text', 'Clicks: 1');
-    });*/
+    });
     
     it('should register then login and increment multiple times on multiple clicks',()=> {
         cy.visit('/register');

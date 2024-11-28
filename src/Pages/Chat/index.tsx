@@ -69,6 +69,7 @@ export function Chat() {
               onChange={(e) => setContent(e.target.value)}
               placeholder="Write your comment here..."
               style={{ width: '100%', height: '100px', marginBottom: '10px' }}
+              className='msg'
             />
             <button onClick={handleAddComment}>Send</button>
           </div>

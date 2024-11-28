@@ -101,12 +101,12 @@ describe('Clicker Test', () => {
     it('should display message when the time for clicks is up and update score for existing user and restart game', () => {
         cy.intercept('POST', '/login', {
             statusCode: 200,
-            body: { message: 'true' , name : 'Wojtas2'}, 
+            body: { message: 'true' , name : 'kumi'}, 
           }).as('loginRequest');
 
         //login 
-        cy.get('input#email').type('xiega2@wp.pl');
-        cy.get('input#pass').type('testtest');
+        cy.get('input#email').type('kumi@kumi.kumi');
+        cy.get('input#pass').type('qwerty123');
         cy.get('button[type="submit"]').click();
 
         cy.wait('@loginRequest');
@@ -119,13 +119,15 @@ describe('Clicker Test', () => {
         
         cy.get('p').contains("Time's up!").should('be.visible');
 
-        cy.get('button').contains('Save Score').click();
+        
         cy.intercept('POST', '/save', {
             statusCode: 200,
             body: { message: 'Update!'}, 
           }).as('saveRequest');
         
-        cy.wait(2000);
+        //cy.wait(2000);
+
+        cy.get('button').contains('Save Score').click();
         
         cy.wait('@saveRequest');
 
@@ -135,6 +137,44 @@ describe('Clicker Test', () => {
         cy.get('p').contains("Update score!").should('be.visible');
 
     });
+
+    // it('should display message when the time for clicks is up and add score for existing user who has never played before', () => {
+    //   cy.intercept('POST', '/login', {
+    //       statusCode: 200,
+    //       body: { message: 'true' , name : 'Wojtas2'},
+    //     }).as('loginRequest');
+
+    //   //login
+    //   cy.get('input#email').type('xiega2@wp.pl');
+    //   cy.get('input#pass').type('testtest');
+    //   cy.get('button[type="submit"]').click();
+
+    //   cy.wait('@loginRequest');
+
+    //   // go to clicker
+    //   cy.get('button').contains('Clicker!').should('be.visible').click();
+    //   cy.get('button').contains('Click me!').click().click().click().click() // to turn on clicker
+
+    //   cy.wait(11000); // wait for 11 seconds
+     
+    //   cy.get('p').contains("Time's up!").should('be.visible');
+
+    //   cy.get('button').contains('Save Score').click();
+    //   cy.intercept('POST', '/save', {
+    //       statusCode: 200,
+    //       body: { message: 'Added'},
+    //     }).as('saveRequest');
+     
+    //   cy.wait(2000);
+     
+    //   cy.wait('@saveRequest');
+
+    //   cy.get('button').contains('New Game').click();
+    //   cy.get('p').contains("Clicks: 0").should('be.visible');
+    //   cy.get('p').contains("Time left: 10s").should('be.visible');
+    //   cy.get('p').contains("Added score!").should('be.visible');
+
+    // });
 
     
 });
